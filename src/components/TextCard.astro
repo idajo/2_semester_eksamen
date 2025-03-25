@@ -1,0 +1,38 @@
+---
+const { overskrift1, text1, image1 } = Astro.props;
+---
+
+<div class="card-flex">   
+        <div>
+            <h2>{overskrift1}</h2>
+            <p>{text1}</p>
+        </div>
+        <div>
+            <img src={image1} alt={image1}/>
+        </div>
+        <slot />
+</div>
+
+<style>
+    .card-flex {
+    display: flex;
+    gap: 50px;
+    margin-left: 6px;
+    margin-top: 50px;
+}
+p{
+    font-family: "poiret-one", sans-serif;;
+}
+img{
+    display: none;
+}
+
+    @media (min-width: 768px) {
+        .card-flex{
+            margin-left: 24px;
+        }
+img{
+    display: block;
+}
+    }
+</style>

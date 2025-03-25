@@ -1,0 +1,66 @@
+---
+import "../styles/styles.css";
+const { header, tekst, img } = Astro.props;
+---
+
+<article class="lyt_med">
+  <h2>{header}</h2>
+  <p class="b2">{tekst}</p>
+  <img src={img} alt="Billede til kortet" />
+  <slot />
+</article>
+
+
+<style>
+/* Mobil styling */
+.lyt_med {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.lyt_med img {
+  max-width: 100%;
+  border-radius: 8px;
+display: grid;
+grid-column: 2/3;
+grid-row: 1/3;
+}
+
+/* Desktop styling */
+@media (min-width: 768px) {
+  .lyt_med {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    max-width: 100%;
+    margin: 24px;
+  }
+
+  .lyt_med h2, .lyt_med p{
+    display: grid;
+    grid-column: 1/2; 
+      max-width: 40ch;
+  }
+  .lyt_med p{
+    display: grid;
+    grid-column: 1/2; 
+      max-width: 40ch;
+      padding-bottom:20px;
+  }
+}
+
+@media (max-width: 768px) {
+    .lyt_med {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:10px;}
+
+  .lyt_med img {
+  max-width: 100%;
+  border-radius: 8px;
+    display: none;
+
+}
+}
+</style>

@@ -1,0 +1,180 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/styles.css"
+import Button from "../components/Button.astro";
+import CardStandard from "../components/CardStandard.astro"
+import Episodecard from "../components/Podcast_side/Episodecard.astro";
+import Arstalfilter from "../components/Arstalfilter.astro";
+---
+<MainLayout>
+<main>
+
+  <div class="video" >
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+<dotlottie-player src="https://lottie.host/f832a26e-1c1c-4a81-932c-a9639cd10704/de6nqf2Kp4.lottie" background="transparent" speed="1" 
+style="width: auto; height:  auto;" loop autoplay></dotlottie-player>
+  </div>
+
+<!-- card 1 -->
+
+<CardStandard 
+  header="Hvem er vi?"
+  tekst="Vi er Alexander og Peter, to venner med en passion for øl, humor og vilde historier. I Vanvittig Verdenshistorie dykker vi ned i de skøreste fortællinger fra verdenshistorien – fra nutid til fortid."
+  img="/billeder/podcast_billeder/privat_peterogalex.png"
+/>
+
+<div class="knap" >
+ <!-- target=_blank = åbner link i ny fane. rel=noopner noreferrer = sikre angreb på den åbne side, øger sikkerhed -->
+  <a href="https://10er.com/vanvittigverdenshistorie/"  target="_blank" rel="noopener noreferrer">
+<Button variant="secondary" size="medium">Støt</Button></a>
+<a href="/omos">
+<Button variant="primary" size="medium">Om os</Button></a>
+</div>
+
+<div class="graa-container" >
+  <h2 class="h2_lyt" >Lyt til et udsnit af podcasten</h2>
+ <Arstalfilter />
+ <!-- VVH Episoder  -->
+
+  <div class="episode-container">
+    <div  class="episoder">    
+    <Episodecard 
+    imgSrc="/billeder/podcast_billeder/meltilmillioner.webp" 
+    text="#214: Episode om Mel for Millioner af kroner"
+  />
+  <Episodecard 
+    imgSrc="/billeder/podcast_billeder/aus.webp" 
+    text="#213: I Auschwitz... Med vilje (REQUEST)"
+  />
+  <Episodecard 
+    imgSrc="/billeder/podcast_billeder/sportsgrene.webp" 
+    text="#212: Episode om Spøjse Sportsgrene ll"
+  />
+ <Episodecard 
+  imgSrc="/billeder/podcast_billeder/oswald.webp" 
+  text="#211: #211: Oswald Mosley: Britiske Hitler"
+/>
+<Episodecard 
+  imgSrc="/billeder/podcast_billeder/bahamas.webp" 
+  text="#210: Joe Carstairs: Babes, Både & Bahamas"
+/>
+<Episodecard 
+imgSrc="/billeder/podcast_billeder/sportsgrene.webp" 
+text="#212: Episode om Spøjse Sportsgrene ll"
+/>
+<Episodecard 
+imgSrc="/billeder/podcast_billeder/oswald.webp" 
+text="#211: #211: Oswald Mosley: Britiske Hitler"
+/>
+<Episodecard 
+imgSrc="/billeder/podcast_billeder/bahamas.webp" 
+text="#210: Joe Carstairs: Babes, Både & Bahamas"
+/>
+
+  </div>
+ </div>
+ 
+<p class="p_lyt" >Hør vores 3 fantastiske podcasts, hvor vi dykker ned i skøre og fantastiske røverhistorier. Vi drikker en øl, deler en historie skiftevis, og vurdere til slut på vores eget vanvidsbarometer. </p>
+<div class="knap2" >
+<a href="/podcast"><Button variant="primary" size="medium">Lyt med</Button></a> </div>
+</div> 
+
+<!-- Card 2 -->
+   <CardStandard 
+      header="Kom & se os live"
+      tekst="Vi turnerer jævnligt med podcasten. På nedenstående link kan du se, om vi snart kommer forbi lige netop DIN by! Du ved aldrig, hvad vi finder på – men vi lover dig, at det bliver sjovt!"
+      img="/billeder/podcast_billeder/live_illu2.svg"
+    >
+    </CardStandard>
+    <div class="knap" >
+      <a href="/liveshow"><Button variant="primary" size="medium">Live shows</Button></a>
+    </div>
+	<main/>
+  </MainLayout>
+
+
+  <style>
+/* mobil */
+
+.knap{
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+  margin: 16px;
+  margin-bottom: 90px;
+}
+
+.knap2{
+  margin-bottom: 32px;
+}
+
+h2 {
+  margin: 16px;
+}
+
+.h2_lyt { 
+  color: #582d32;
+}
+
+.p_lyt{
+ color: #582d32; 
+}
+
+  .episoder {
+  display: flex;                
+  overflow-x: auto;             
+  gap: 20px;                    
+  padding: 10px;                
+  scroll-snap-type: x mandatory; 
+}
+p{
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+/* Scroll bar */
+.episoder::-webkit-scrollbar {
+  height: 8px;
+}
+.episoder::-webkit-scrollbar-track {
+  background: transparent;
+}
+.episoder::-webkit-scrollbar-thumb {
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="10"%3E%3Ccircle cx="5" cy="5" r="2" fill="%23ff6011" /%3E%3Ccircle cx="15" cy="5" r="2" fill="%23ff6011" /%3E%3Ccircle cx="25" cy="5" r="2" fill="%23ff6011" /%3E%3C/svg%3E') no-repeat;
+  border-radius: 50px; 
+  height: 6px;
+  width: 40px; 
+}
+.episoder::-webkit-scrollbar-thumb {
+    margin-left:200px;
+   
+  }
+    .graa-container {
+    background-color: #ccd0c9; 
+    padding: 16px;
+    margin: 0;
+    width: 100%; 
+    box-sizing: border-box; 
+  margin-bottom: 45px;
+}
+  
+.video {
+  margin-bottom: 25px;
+}
+/* desk */
+@media (min-width: 768px){
+.video {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.knap{
+  display: grid;
+  grid-template-columns: 1fr 1fr 4fr;
+  margin: 24px;
+  margin-bottom: 56px;
+}
+
+
+}
+
+</style>

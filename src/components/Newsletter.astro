@@ -1,0 +1,87 @@
+---
+const { img, src, name, description } = Astro.props;
+---
+
+<article class="nyhedsbrev">
+  <h2>Meld dig til vores nyhedsbrev</h2>
+  <div class="b3"> 
+  <b3>
+    Meld dig til vores nyhedsbrev og vær den første til at modtage nyt om <br> Live shows, collabs og andet sjovt.
+  </b3></div>
+  <form class="nyhedsbrev-form">
+    <input type="text" id="email" name="" placeholder="e-mail" />
+    <input type="submit" value="Bliv medlem" />
+  </form>
+  <div class="nyhedsbrev-footer">
+    </div>
+  </div>
+</article>
+
+<style>
+h2 {
+  color: #582d32;
+  margin-bottom: 16px;
+  text-align: center; /* Centrer tekst */
+}
+
+.b3 {
+  color: #582d32;
+  margin-bottom: 16px;
+  text-align: center; /* Centrer tekst */
+}
+
+.nyhedsbrev {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrer børneelementerne */
+  justify-content: center;
+  border: 2px solid #582d32;
+  padding: 20px;
+  max-width: 500px;
+  margin: 50px auto;
+  border-radius: 8px;
+  text-align: center; /* Centrer alt tekst i containeren */
+}
+
+/* Form styling */
+.nyhedsbrev-form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 10px;
+}
+
+.nyhedsbrev-form input[type="text"] {
+  padding: 10px;
+  border: 1px solid #fff;
+  opacity: 60%;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nyhedsbrev-form input[type="submit"] {
+  padding: 10px;
+  border: 2px solid #FF6011;
+  border-radius: 10px;
+  cursor: pointer;
+  background: transparent;
+  color: #582d32;
+  font-weight: bold;
+}
+
+.nyhedsbrev-form input[type="submit"]:hover {
+  background-color: #FF6011;
+}
+
+@media (min-width: 768px) {
+  .nyhedsbrev {
+    max-width: 45%;
+  }
+h2{
+  line-height: 5rem;
+}
+
+}
+</style>

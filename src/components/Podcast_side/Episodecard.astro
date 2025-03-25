@@ -1,0 +1,98 @@
+---
+const { imgSrc, text } = Astro.props;
+---
+
+<article>
+  <div class="episode-card">
+    <img src={imgSrc} alt="Episode image" />
+    <p>{text}</p>
+
+    <!-- Audio på play -->
+    <div class="lyd_play">
+      <audio id="audio1" class="audio" preload="auto">
+        <source src="/audio/NY-citat-midt-podcast.m4a" type="audio/mp3">
+      </audio>
+      <div class="lyd_play_1" id="playBtn1">
+        <img src="/billeder/podcast_billeder/play_logo.svg" alt="play">
+      </div>
+    </div>
+  </div>
+</article>
+
+<style>
+ /*  Mobil */
+    .lyd_play_1 img {
+      height: 24px;
+      width: 24px;
+      display: flex;
+      align-items: flex-end;
+      margin-top: 20px;
+    }
+
+    img {
+      width: 109.938px;
+      height: 105.345px;
+      border-radius: 20px;
+      margin-top: 16px;
+    }
+    
+    h3 {
+      color: #582d32;
+      margin: 0;
+    }
+
+    p {
+      font-size: 0.75rem;
+      color: #582d32;
+      line-height: 1rem;
+      margin: 0;
+    }
+  
+
+  /* desktop */
+  @media (min-width: 768px){ 
+p{
+  font-family: "Martel Sans", serif;
+  font-size: 16px;
+  color:#582d32;
+  font-weight: 400;
+}
+
+.episode-card img {
+ width: 199px;
+  height: 196px;
+  border-radius: 30px;
+}
+
+.lyd_play_1 img {
+    height: 30px;
+    width: 30px;
+  }
+}
+</style>
+
+<!-- Script til afspilning -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Find alle play-knapper og lyd-elementer
+    const playBtns = document.querySelectorAll('.lyd_play_1');
+    const audios = document.querySelectorAll('audio'); // Find alle audio-elementer
+
+    // Loop gennem alle play-knapperne
+    playBtns.forEach((playBtn, index) => {
+      const audio = audios[index]; // Find det tilsvarende audio-element
+
+      // Event handler for play/pause
+      playBtn.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play(); // Start afspilning
+          playBtn.querySelector('img').src ="/billeder/podcast_billeder/pause_logo.svg"; // Skift ikon til pause
+        } else {
+          audio.pause(); // Pause afspilning
+          audio.currentTime = 0; // Start lyden forfra
+          playBtn.querySelector('img').src = "/billeder/podcast_billeder/play_logo.svg"; // Skift ikon til play
+        }
+      });
+    });
+  });
+</script>

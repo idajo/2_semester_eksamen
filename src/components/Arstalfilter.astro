@@ -1,0 +1,61 @@
+---
+
+---
+
+<div class="afsnit_karrusel">
+    <div class="filter_aar">
+      <button class="year-btn" data-year="2024">2024</button>
+      <button class="year-btn" data-year="2023">2023</button>
+      <button class="year-btn" data-year="2022">2022</button>
+      <button class="year-btn" data-year="2021">2021</button>
+      <button class="year-btn" data-year="2020">2020</button>
+      <button class="year-btn" data-year="2019">2019</button>
+      <button class="year-btn" data-year="2018">2018</button>
+    </div>
+  </div>
+  
+  <style>
+  /* Styling for knapperne */
+  .filter_aar {
+    display: flex;
+    gap: 10px;
+  }
+  .afsnit_karrusel {
+    margin-top: 24px;
+  }
+  .year-btn {
+    width: 87px;
+    height: 32px;
+    border: 2px solid #FF6011;
+    border-radius: 10px;
+    background-color: #FF6011; 
+    color: #ccd0c9; 
+    font-size: 14px;
+    cursor: pointer;
+  }
+  /* Styling for den aktive knap */
+  .year-btn.active {
+  background-color: transparent;
+  border: 2px solid #FF6011; 
+  color: #FF6011; 
+}
+  /* Når knappen er hover */
+  .year-btn:hover {
+    background-color:#52bf77;
+    color: white;
+  }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const buttons = document.querySelectorAll('.year-btn');
+  
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          buttons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+        });
+      });
+    });
+  </script>
+  

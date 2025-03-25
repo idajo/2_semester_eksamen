@@ -1,0 +1,85 @@
+
+<!-- Hero sektion -->
+<article>
+<div class="section_podcast_header">
+    <div class="tekst"> 
+    <h1>Lyt til vores podcast</h1>
+    <h3>Hør vores 3 fantastiske podcasts, hvor vi dykker ned i skøre og fantastiske røverhistorier. Vi drikker en
+        øl,
+        deler en historie skiftevis, og vurdere til slut på vores eget vanvidsbarometer. </h3>
+    </div>
+    <div class="foto">
+        <img src="/billeder/lyt_med_illu4.svg" alt="lyt med" class="displaynone">
+</div></div>
+</article>
+
+
+<style>
+   /* Mobil */
+.foto {
+    display: none; 
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: #fffdea
+  }
+
+  h3{
+font-size: 18px;
+margin-bottom: 40px;
+line-height: 28px;
+color: #fffdea;
+margin-block: 50px;
+  }
+
+  .tekst {
+    width: 100%; 
+  }
+
+
+/* Website */
+@media (min-width: 768px){
+
+  .foto {
+    display: block; 
+  }
+.section_podcast_header{
+    margin: 24px;
+    color: #fffdea;
+    display: flex;
+}
+.section_podcast_header {
+  display: grid;
+  grid-template-columns: 2fr 1fr; 
+  gap: 200px; 
+  align-items: center;
+}
+
+.tekst {
+  width: 100%; 
+}
+
+h1 {
+    margin-bottom: 50px;
+    font-size: 72px;
+}
+
+h3 {
+  font-size: 48px;
+  line-height: 58px
+}
+
+.foto img {
+width: 350px;
+height: auto;
+}
+}
+
+.displaynone {
+  display: block;
+}
+
+</style>

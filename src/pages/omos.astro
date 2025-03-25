@@ -1,0 +1,158 @@
+---
+import "../styles/styles.css";
+import CardOmOs from "../components/CardOmOs.astro";
+import Instagram from "../components/Instagram.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import CardStandard from "../components/CardStandard.astro";
+import TextCard from "../components/TextCard.astro";
+---
+<MainLayout>
+<main>
+<h1>Vanvittig verdenshistorie</h1>
+<div class="custom-wrapper">
+<CardStandard
+    header="Om os"
+    tekst="Vi er Alexander og Peter, to venner med en passion for øl, humor og vilde historier. I Vanvittig Verdenshistorie dykker vi ned i de skøreste fortællinger fra verdenshistorien fra nutid til fortid."
+    img="/billeder/podcast_billeder/logoglobus.webp" alt="logoglobus"
+/>
+</div>
+<CardOmOs
+    image1="/billeder/podcast_billeder/peter.webp" 
+    overskrift1="Peter Loehde" 
+    text1="Jeg har lavet podcast siden jeg var 13 år. Jeg er vild med at formidle podcast, og arbejder som projektleder på flere podcasts."
+    image2="/billeder/podcast_billeder/alex.webp" 
+    overskrift2="Alexander Janku" 
+    text2="Jeg er vild med øl og video. Jeg har et helt rum fyldt med øl fra bund til top. Jeg laver dokumentarer og arbejder med lyd."
+/> 
+
+<Instagram billederaekke> 
+<a class="instagram-billeder" href="https://www.instagram.com/vanvittigverdenshistorie/?hl=da">
+  <img class="ig" src="/billeder/podcast_billeder/instagram1.webp" alt="instagram1">
+  <img class="ig" src="/billeder/podcast_billeder/instagram2.webp" alt="instagram2">
+  <img class="ig" src="/billeder/podcast_billeder/omosinstagram.webp" alt="instagram3">
+  <img class="ig" src="/billeder/podcast_billeder/instagram1.webp" alt="instagram4">
+  <img class="ig"src="/billeder/podcast_billeder/instagram2.webp" alt="instagram5">
+  <img class="ig" src="/billeder/podcast_billeder/omosinstagram.webp" alt="instagram6">
+  <img class="ig" src="/billeder/podcast_billeder/instagram1.webp" alt="instagram7">
+  <img class="ig" src="/billeder/podcast_billeder/instagram2.webp" alt="instagram8">
+  <img class="ig" src="/billeder/podcast_billeder/omosinstagram.webp" alt="instagram9">
+</a>
+</Instagram>
+
+<TextCard
+overskrift1="Vil du støtte podcasten?"
+text1="Først og fremmest: TAK! Vi er en gratis podcast, der ikke direkte tjener penge på, at folk som dig lytter med! Derfor er sponsorater og donationer med til at holde gang i hjulene. En rigtig god måde at støtte på er ved at donere et fast, lavt beløb pr. afsnit via 10er.dk."
+image1="/billeder/podcast_billeder/stoethaender.webp"
+/>
+<div class="button">
+<a href="https://www.vanvittigverdenshistorie.dk/_files/ugd/5215d4_9efe62193f1b44bdaa6208ba08d70cae.pdf" target="_blank" rel="noopener noreferrer">
+      <Button variant="secondary" size="medium">Regnskab</Button>
+    </a>
+      <a href="https://10er.com/vanvittigverdenshistorie/" target="_blank" rel="noopener noreferrer">
+      <Button variant="primary" size="medium">Støt</Button>
+      </a>
+</div>
+
+<TextCard
+overskrift1="Kom til vores Live Shows"
+text1="Vi turnerer jævnligt med podcasten. På nedenstaeende link kan du se om vi snart kommer forbi lige netop DIN by! Du ved aldrig, hvad vi finder på - men vi lover dig, at det bliver sjovt!"
+image1="/billeder/podcast_billeder/livesofa.webp"
+/>
+
+<div class="button2">
+<a href="liveshow" target="_blank" rel="noopener noreferrer">
+      <Button variant="primary" size="medium">Live shows</Button>
+    </a>
+</div>
+</main>
+</MainLayout>
+
+<style>
+   h1, h2{
+      font-size: 36px;
+    }
+    p{
+        max-width: 65ch;
+
+ .b2{
+      font-size: 18px;
+    }
+    }
+    .button {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      margin-left: 6px;
+      margin-bottom: 90px;
+    }
+    .button2{
+      margin-bottom: 100px;
+      margin-left: 6px;
+    } 
+    .ig{
+       border-radius: 10px;
+       margin: 16px;
+       width: 110px;
+      height: 110px;
+    }
+
+  .instagram-billeder{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+.topnav, .website-billeder{
+  display: none;
+}    
+.custom-wrapper :global(img) {
+  display: none;
+  gap: 0px;
+}
+.custom-wrapper {
+  margin-bottom: 48px;
+  padding-inline: 10px;
+  padding-top: 30px;
+}
+      @media (min-width: 768px) { 
+.custom-wrapper :global(img){
+ display: block;
+ } 
+.bottomnav {
+  display: none;
+}
+.button, .button2{
+  margin-left: 35px;
+}
+.topnav{
+  display: block;
+}
+.website-billeder{
+display: inline;
+}
+     h1, h2{
+      font-size: 72px;
+    }
+    h1{
+    padding-left: 24px;
+   }
+  .overskriftstoet{
+    margin-top: 50px;
+  }
+      .b2{
+      font-size: 48px;
+line-height: 58px;
+    }
+
+    .ig{
+    width: 199px;
+    height: 196px;
+    }
+   
+    p{
+      max-width: 45ch;
+    }
+  }
+    
+</style>

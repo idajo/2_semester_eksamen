@@ -1,0 +1,172 @@
+---
+import "../styles/styles.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import Heropodcast from "../components/Podcast_side/Heropodcast.astro";
+import Podcastcard from "../components/Podcast_side/Podcastcard.astro";
+import Arstalfilter from "../components/Arstalfilter.astro";
+import Episodecard from "../components/Podcast_side/Episodecard.astro";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout>
+<main>
+    <!-- Hero sektion på podcast siden -->
+    <Heropodcast />
+ <!-- Alle VVh podcasts oversigt -->
+  <div class="graa-container">
+ <section class="podcast-list">
+  <Podcastcard 
+    imgSrc="/billeder/podcast_billeder/podcast.webp" 
+    header="Vanvittig Verdenshistorie"
+    text="I vores hovedpodcast får du 90 min. vild historie i din øregang."
+  />
+  <Podcastcard 
+    imgSrc="/billeder/podcast_billeder/pixi.webp" 
+    header="Vanvittig Historie Pixi"
+    text="Dybdegående fortællinger om historiens store personligheder."
+  />
+  <Podcastcard 
+    imgSrc="/billeder/podcast_billeder/jule.webp" 
+    header="Special Julekalender"
+    text="Fascinerende fortællinger fra hele verden, hver dag hele December"
+  />
+</section>
+<!-- årstal filter -->
+ <Arstalfilter />
+
+<!-- VVH Episoder -->
+<div class="episode-container">
+<section>
+    <div  class="episoder">
+    <Episodecard 
+    imgSrc="/billeder/podcast_billeder/meltilmillioner.webp" 
+    text="#214: Episode om Mel for Millioner af kroner"
+  />
+  <Episodecard 
+    imgSrc="/billeder/podcast_billeder/aus.webp" 
+    text="#213: I Auschwitz... Med vilje (REQUEST)"
+  />
+  <Episodecard 
+    imgSrc="/billeder/podcast_billeder/sportsgrene.webp" 
+    text="#212: Episode om Spøjse Sportsgrene ll"
+  />
+ <Episodecard 
+  imgSrc="/billeder/podcast_billeder/oswald.webp" 
+  text="#211: #211: Oswald Mosley: Britiske Hitler"
+/>
+<Episodecard 
+  imgSrc="/billeder/podcast_billeder/bahamas.webp" 
+  text="#210: Joe Carstairs: Babes, Både & Bahamas"
+/>
+<Episodecard 
+imgSrc="/billeder/podcast_billeder/sportsgrene.webp" 
+text="#212: Episode om Spøjse Sportsgrene ll"
+/>
+<Episodecard 
+imgSrc="/billeder/podcast_billeder/oswald.webp" 
+text="#211: #211: Oswald Mosley: Britiske Hitler"
+/>
+<Episodecard 
+imgSrc="/billeder/podcast_billeder/bahamas.webp" 
+text="#210: Joe Carstairs: Babes, Både & Bahamas"
+/>
+</div>
+</section>
+</div>
+</div>
+
+
+ <!-- Vanvidsbarometer -->
+ <div>
+    <h2>Vanvidsbarometer</h2>
+    <p>I hvert afsnit vurderer vi historien på vores eget vanvidsbarometer. Her vurderer vi vildskab, lol-faktor,
+        uniqueness, indflydelse og ekstra spice.
+    </p>
+    <p>Check Barometer Bjarke ud, som har visualiseret og lavet infografik til det meste vi nævner i
+        podcasten,holder regnskab på vores barometer og meget mere!</p>
+    <!-- target=_blank = åbner link i ny fane. rel=noopner noreferrer = sikre angreb på den åbne side, øger sikkerhed -->
+    <div class="BB-knap">
+    <a href="https://barometerbjarke.dk/" target="_blank" rel="noopener noreferrer">
+      <Button variant="primary" size="medium">Mød Bjarke</Button>
+    </a>
+  </div>
+</div>
+</main>
+</MainLayout>
+
+<style>
+  /* Mobil */
+    /* Graa boks oversigt */
+    .graa-container {
+    background-color: #ccd0c9; 
+    padding: 16px;
+    margin: 0!important;
+    width: 100%; 
+    box-sizing: border-box; 
+ 
+  }
+  .podcast-list {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+  }
+  .episoder {
+  display: flex;                
+  overflow-x: auto;             
+  gap: 20px;                    
+  scroll-snap-type: x mandatory; 
+  margin-top: 8px;
+}
+/* Scroll bar */
+.episoder::-webkit-scrollbar {
+  height: 8px;
+}
+.episoder::-webkit-scrollbar-track {
+  background: transparent;
+}
+.episoder::-webkit-scrollbar-thumb {
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="10"%3E%3Ccircle cx="5" cy="5" r="2" fill="%23ff6011" /%3E%3Ccircle cx="15" cy="5" r="2" fill="%23ff6011" /%3E%3Ccircle cx="25" cy="5" r="2" fill="%23ff6011" /%3E%3C/svg%3E') no-repeat;
+  border-radius: 50px; 
+  height: 6px;
+  width: 40px; 
+}
+.episoder::-webkit-scrollbar-thumb {
+    margin-left:200px;
+  }
+p {
+    color: #fffdea;
+    margin-bottom: 8px;
+    margin-top: 32px;
+}
+.BB-knap{
+  margin-bottom: 32px;
+}
+  /* Desktop */ 
+  @media (min-width: 768px) { 
+/* Graa boks oversigt */
+.graa-container {
+    background-color: #ccd0c9; 
+    padding: 24px;
+    margin: 0;
+    width: 100%; 
+    box-sizing: border-box; 
+  }
+  .podcast-list {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+/* billede karrusel */
+.episoder {
+  display: flex;               
+  overflow-x: auto;            
+  gap: 20px;                    
+  scroll-snap-type: x mandatory; 
+}
+.BB-knap{
+  margin-bottom: 56px;
+}}
+</style>

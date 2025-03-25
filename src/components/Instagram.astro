@@ -1,0 +1,42 @@
+---
+const { billederaekke } = Astro.props;
+---
+
+<article class="instagram">
+    <h2>Instagram</h2>
+    <div class="mellemrum">
+    <slot />
+    </div>
+</article>
+
+<style>
+
+   h2{
+    margin: 16px;
+    color: #582d32;
+   }
+    .instagram{
+        background-color: #CCD0C9;
+        padding: 10px;
+        overflow-x: auto;
+        margin-bottom: 60px;
+    }
+    .instagram::-webkit-scrollbar {
+        height: 25px;
+}
+.instagram::-webkit-scrollbar-thumb {
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="10"%3E%3Ccircle cx="5" cy="5" r="2" fill="%23ff6011" /%3E%3Ccircle cx="15" cy="5" r="2" fill="%23ff6011" /%3E%3Ccircle cx="25" cy="5" r="2" fill="%23ff6011" /%3E%3C/svg%3E') no-repeat;
+}
+
+    .mellemrum{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;  
+    width: 100%;
+    }
+     @media (min-width: 768px) { 
+     .instagram{
+        padding-left: 24px;
+     }
+}
+</style>

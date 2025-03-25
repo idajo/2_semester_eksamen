@@ -1,0 +1,61 @@
+---
+const {variant,size} = Astro.props;
+import "../styles/styles.css"
+---
+<div class="knap">
+<button class= {variant} ><slot/></button>
+</div>
+
+
+<style>
+button{ 
+padding: 12px 16px;
+border-radius: 12px;
+width: 109px;
+height: 40px;
+border: none;
+margin-top: 16px;
+cursor: pointer;
+ margin-left: 16px;
+  margin-right: 16px;
+}
+
+.primary {
+background-color: #52BF77;
+color: #582d32;
+font-weight: bold;
+}
+
+.primary:hover {
+background-color: #52BF77;
+opacity: 60%;
+color: #582d32;
+font-weight: bold;
+}
+.secondary {
+border: 2px solid #52BF77;
+background-color: transparent;
+color: #52BF77;
+font-weight: bold;
+}
+
+.secondary:hover {
+background-color: #52BF77;
+color: #582d32;
+font-weight: bold;
+}
+
+
+
+@media (min-width: 768px) {
+button {
+width: 10rem;
+height: 3rem;
+padding: 12px 16px;
+margin-top: 16px;
+font-size: 18px;
+}
+
+}
+</style>
+

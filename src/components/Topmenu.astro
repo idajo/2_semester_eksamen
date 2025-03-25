@@ -1,0 +1,64 @@
+---
+
+---
+<nav>
+    <a href="/" aria-label="Home">
+      <img src="../billeder/favicon_vvh.svg" alt="Logo" class="logo" />
+    </a>
+    
+    <ul class="nav-links">
+      <li><a href="/liveshow">Live shows</a></li>
+      <li><a href="/podcast">Podcast</a></li>
+      <li><a href="/shop">Shop</a></li>
+      <li><a href="/omos">Om os</a></li>
+    </ul>
+  </nav>
+
+ <style>
+        nav {
+          display: flex;
+          justify-content: space-between; 
+          align-items: center; 
+          background-color: #582d32; 
+          color: #fffdea; 
+          margin: 24px;
+          display: none;
+        }
+      
+        nav .logo {
+          width: 40px; 
+          height: auto;
+        }
+      
+        .nav-links {
+          display: flex; 
+          list-style: none; 
+        }
+      
+        .nav-links li {
+          margin-left: 20px; /* Placer afstand mellem links */
+        }
+      
+ .nav-links a {
+    font-family: "Martel Sans", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: #fffdea; 
+    text-decoration: none; 
+           }
+      
+ .nav-links a:hover {
+          color: #52bf77 ;
+        }
+
+.nav-links a:active {
+    color:  #52bf77;
+  }
+         @media (min-width: 768px) { 
+          nav{
+          display: flex;
+         }
+      }
+    </style>
+

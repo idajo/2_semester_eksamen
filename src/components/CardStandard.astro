@@ -1,0 +1,51 @@
+---
+import "../styles/styles.css";
+const { header, tekst, img } = Astro.props;
+---
+
+<article class="hvem">
+  <h2>{header}</h2>
+  <h3>{tekst}</h3>
+  <img src={img} alt="Billede til kortet" />
+  <slot />
+</article>
+
+
+<style>
+/* Mobil styling */
+.hvem {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hvem img {
+  max-width: 100%;
+  border-radius: 8px;
+  
+}
+
+/* Desktop styling */
+@media (min-width: 768px) {
+  .hvem {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    align-items: center;
+    max-width: 100%;
+    margin: 24px;
+  }
+
+  .hvem h2 {
+    grid-column: span 2; 
+  }
+}
+
+@media (max-width: 768px) {
+  .hvem img {
+    margin-inline: 10px;
+  }
+
+  .hvem h2 {
+    margin-bottom: -20px;
+</style>

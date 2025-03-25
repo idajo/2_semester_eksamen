@@ -1,0 +1,70 @@
+---
+const { overskrift1, text1, image1, overskrift2, text2, image2 } = Astro.props;
+---
+<div class="flexbillede">
+    <article>
+        <img src={image1} alt={image1} />
+        <h2>{overskrift1}</h2>
+        <p>{text1}</p>
+    </article>
+    <article>
+        <img src={image2} alt={image2} />
+        <h2>{overskrift2}</h2>
+        <p>{text2}</p>
+    </article>
+</div>
+
+<style>
+.flexbillede {
+  margin-bottom: 100px;
+}
+img {
+   width: 95%;
+  border-radius: 10px;
+  
+  margin-inline: auto;
+  display: block;
+}
+h2, p {
+    color: #fffdea;
+    max-width: 65ch;
+    font-family: "poiret-one", sans-serif;
+}
+
+h2{
+    font-size: 32px;
+    
+}
+p{
+    max-width: 30ch;
+    line-height: 1.3rem;
+    margin-bottom: 50px;
+}
+    @media (min-width: 768px) { 
+    h2{ font-size: 60px;
+    }
+    p{ font-size: 24px;
+         line-height: 2rem;
+    }
+       img {
+        width: 542px;
+        height: 482px;
+        border-radius: 30px; 
+
+    
+    }
+    .flexbillede{
+        display: flex;
+        justify-content: space-between;
+        width: 98%;
+        margin-bottom: 40px;
+        margin-left: 24px;
+    }
+}
+
+</style>
+
+
+
+
+

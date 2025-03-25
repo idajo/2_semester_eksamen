@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/******************************* color ***************************/
+
+:root {
+  --primary-color: #582d32;
+  --secondary-color: #ccd0c9;
+  --tertiary-color: #52bf77;
+  --accent-color: #ff6011;
+  --background-color: #582d32;
+  --text-color: #fffdea;
+}
+
+/******************************* mobil styling *************************************/
+/* body {
+  margin-left: 16px;
+  margin-right: 16px;
+} */
+
+/******************************* font *************************************/
+h1 {
+  font-family: "puffin-display", sans-serif;
+  font-size: 2.25rem;
+  color: var(--text-color);
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-family: "poiret-one", sans-serif;
+  font-size: 2rem;
+  line-height: 2.7rem;
+  color: var(--text-color);
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-family: "poiret-one", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  color: var(--text-color);
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+p {
+  font-family: "Martel Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: var(--text-color);
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.b2 {
+  font-family: "Martel Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.7rem;
+  color: var(--text-color);
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.b3 {
+  font-family: "Martel Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: var(--text-color);
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+h1,
+h2,
+h3,
+p,
+.b1,
+.b2,
+.b3 {
+  /* margin-left: 16px;
+  margin-right: 16px; */
+  padding-inline: 10px;
+}
+body {
+  background-color: var(--background-color);
+}
+/********************* desk ***************************/
+/********************* Font ***************************/
+@media (min-width: 768px) {
+  h1 {
+    font-family: "puffin-display", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 72px;
+    line-height: 5rem;
+    margin-bottom: 1.5rem;
+  }
+  h2 {
+    font-family: "poiret-one", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4.5rem;
+    line-height: 3.6rem;
+    margin-bottom: 16px;
+  }
+  h3 {
+    font-family: "poiret-one", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+    line-height: 3.6rem;
+  }
+  p {
+    font-family: "Martel", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    max-width: 60ch;
+  }
+  .b2 {
+    font-family: "Martel", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .b3 {
+    font-family: "Martel", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+  h1,
+  h2,
+  h3,
+  p,
+  .b1,
+  .b2,
+  .b3 {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  body {
+    background-color: var(--primary-color);
+  }
+  /****************************** margin ******************************/
+  main {
+    background-color: #582d32;
+  }
+}

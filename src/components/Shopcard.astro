@@ -1,0 +1,115 @@
+---
+import Button from "../components/Button.astro";
+import "../styles/styles.css";
+---
+
+
+
+<article class="display" >
+    <div class="bog">
+        <img src="/billeder/bog.webp" alt="bog">
+        <h3>Vanvittig Verdenshistorie bog</h3>
+        <p>Vi har skrevet en bog!</p>
+        <p>"Vanvittig Verdenshistorie: 50 Røverhistorier fra virkeligheden" er et produkt af kærlighed. Kærlighed til en god røverhistorie over en øl. Kærlighed til fortiden og det, den kan lære os om nutiden. Og en kærlighed til dybt idiotiske fun facts.</p>
+        <a href="https://www.zebramedier.dk/vare/vanvittig-verdenshistorie-bog/">
+        <div class="button"> <Button variant="primary" size="medium">Køb bogen</Button>  </div></a>
+        <div class="pris"> 149 DKK </div>
+    </div>
+    <div class="shop">
+        <img src="/billeder/liveshow1.webp" alt="shop">
+        <h3>Shop</h3>
+        <p>I samarbejde med B-entertainmend sælger vi øl vi selv har brygget eller drukket i løbet af podcasten. 
+        Find også mulleposer og t-shirts. </p>
+        <a href="https://shop.bentertained.dk/collections/kollektioner-vanvittig-verdenshistorie">
+        <div class="button"> <Button variant="primary" size="medium">Shop</Button>  </div></a>
+        
+    </div>
+</article>
+
+
+<style>
+/* Mobil */
+img {
+    width: 359px;
+    height: 319.18px;
+    border-radius: 30px;
+}
+h3{
+color: #FFFDEA;
+font-family: "poiret-one", sans-serif;
+font-size: 36px;
+}
+p {
+font-family: "Martel", serif;
+ font-size:12px ;
+ color: #FFFDEA;
+ line-height: 20px;
+}
+.button {
+display: flex;
+justify-content: flex-end;
+margin-right: 24px;
+}
+.pris {
+color: rgba(255, 253, 234, 0.60);
+font-family: "Martel Sans";
+font-size: 10px;
+line-height: 20px;
+display: flex;
+justify-content: flex-end;
+margin-right: 24px;
+}
+.pris p {
+    
+    margin-right: 24px;
+}
+.shop p {
+    width: 98%;
+    margin-bottom: 8px;
+} 
+ img {
+    width: 577px;
+    height: 513px;
+    border-radius: 30px; 
+    } 
+    .display{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 80%;
+        gap: 210px;
+        margin: 24px;
+
+    }  
+    .shop p {
+        margin-bottom: 35px;
+    }
+@media (max-width: 768px) {
+  .display {
+    display: block;
+margin-inline: 16px;
+width: 95%;
+  }
+   img {
+    width: 95%;
+height: auto;
+}
+
+h3 {
+    line-height: normal;
+}
+p {
+/* font-family: "Martel", serif; */
+ font-size:14px ;
+ color: #FFFDEA;
+ line-height: 20px;
+max-width: 65ch;
+}
+.bog {
+    margin-bottom: 50px;
+}
+.pris {
+  font-size: 12px;
+  margin-right: 45px;
+  margin-top: 10px;
+}
+</style>

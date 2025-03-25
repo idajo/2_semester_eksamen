@@ -1,0 +1,82 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import CardLiveShow from "../components/CardLiveShow.astro";
+import Button from "../components/Button.astro";
+import LytMed from "../components/LytMed.astro";
+import "../styles/styles.css"
+const data = await fetch("https://npzsiyrlhgyrlgqihmlr.supabase.co/rest/v1/live_shows", {
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wenNpeXJsaGd5cmxncWlobWxyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI2NDI1MTEsImV4cCI6MjA0ODIxODUxMX0.klMuw3yaTjBtbbNh1X8UpiCQzsvctaGUNlBp6RC8oz8"
+    }
+}).then(res=>res.json());
+console.log(data);
+---
+
+<MainLayout>
+<main>
+
+<!-- Live show card -->
+
+<section class="live-shows">
+      <img class="live" src="/billeder/liveshow_illu2.webp" alt="illustartion">
+  <div class="hero">
+      <h1>Live Shows</h1>
+      <h3>Vi turnerer jævnligt med podcasten. På nedenstående link kan du se om vi snart kommer forbi lige netop 
+      DIN by! Du ved aldrig, hvad vi finder på - men vi lover dig, at det bliver sjovt! 
+      </h3> 
+  </div>
+</section>
+
+  <div class="cards-container"> 
+      {data.map((show) => (
+      <CardLiveShow header={show.name} image={show.image} text={show.description} date={show.date} buyTicketUrl={show.buy_url} start_time={show.start_time} end_time={show.end_time} pris={show.price}/>))}
+  </div>
+
+
+<LytMed 
+      header="Lyt med på podcasten"
+      tekst= "Hør vores 3 fantastiske podcasts, hvor vi dykker ned i skøre og fantastiske røverhistorier. Vi drikker en øl, deler en historie skiftevis, og vurdere til slut på vores eget vanvidsbarometer"
+ img="/billeder/podcast_billeder/lyt_med_illu4.svg"
+   ></LytMed>
+ <div class="knap_lytmed">
+      <a href="/podcast"> <Button variant="primary" size="medium"> Lyt med </Button> </a>
+    </div>
+</main>
+</MainLayout>
+
+
+<style>
+  /* Mobil */
+  .live-shows img {
+    width: 100%;
+    height: auto;
+     display: block;
+  }
+.hero{
+  padding: 20px;
+  max-width: 150ch;
+}
+.cards-container {
+  display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
+  margin: 15px;
+  gap: 30px;
+  margin-block: 30px 80px;
+  }
+
+  .knap_lytmed{
+  display: grid;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  margin: 16px;
+  margin-bottom: 120px;
+}
+
+
+@media (max-width: 768px){
+.hero{
+    max-width: 150ch;
+}
+}
+</style>

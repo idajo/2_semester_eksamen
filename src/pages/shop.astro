@@ -1,0 +1,48 @@
+---
+import "../styles/styles.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import Shopcard from "../components/Shopcard.astro";
+---
+
+<MainLayout> 
+<main>
+<div class="intro"> 
+<h1>Shop</h1>
+<h2>Vanvittig Verdenshistorie</h2>
+<h3>Som en god podcast har vi lavet merge, så i kan flashe at i er fans af Vanvittig Verdenshistorie og i kan hjælpe med at støtte os.</h3>
+</div>
+
+<Shopcard />
+
+</main>
+</MainLayout> 
+
+<style>
+    /* Mobil */
+/* Intro */
+.topmenu {
+    display: none;
+}
+
+.intro {
+    margin: 16px;
+    margin-bottom: 50px;
+    padding-block: 5px;
+}
+
+
+@media (min-width: 768px) {
+    .topmenu{
+        display: block;
+    }
+
+    .bottomnav {
+        display: none;
+    }
+
+    .intro {
+        margin: 24px;
+    }
+}
+
+</style>

@@ -1,0 +1,113 @@
+---
+const {imgSrc, header, text} = Astro.props;
+---
+
+
+<article>
+    <div class="podcast-card">
+        <img src={imgSrc} alt={header} />
+        <h3>{header}</h3>
+    <div class="tekst">
+        <p>{text}</p>
+    </div>
+      
+    </div>
+    <div class="spotify">
+          <a href="https://open.spotify.com/show/2SIj3k4uJ6B7hC1LosHdlP" target="hoved_podcast">
+              <img src="/billeder/podcast_billeder/spotify_green_logo.svg"></a>
+    </div>
+</article>
+
+
+<style>
+  /* Mobil */
+    .spotify img {
+    height: 24px;
+    width: 24px;
+  }
+
+  h3{
+    font-size: 18px;
+    line-height:24px; 
+  }
+  .spotify {
+    display: flex;
+    align-items: center;
+  }
+  
+  img {
+    width: 109.938px;
+    height: 105.345px;
+    border-radius: 20px;
+  }
+
+  .podcast-card {
+    display: flex;
+    width: 122.284px;
+    align-items: flex-end;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    margin-right: 4px;
+  }
+
+  h3{
+    color: #582d32;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  p{
+    font-size: 0.75rem;
+    color:#582d32;
+    line-height: 1rem;
+    margin-top: 4px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .spotify {
+  display: flex;
+  justify-content: flex-end; 
+  margin-right: 30px;
+  }
+    
+  
+    @media (min-width: 768px){
+      /* Website */
+h3{
+  color: #582d32;
+  font-size: 48px;
+  margin-top: 16px;
+  width: 80%;
+  line-height: 48px;
+}
+
+p{
+  font-family: "Martel Sans", serif;
+  font-size: 16px;
+  color:#582d32;
+  font-weight: 400;
+}
+
+
+.spotify img {
+    height: 30px;
+    width: 30px;
+  }
+
+  .spotify {
+  display: flex;
+  justify-content: flex-end; 
+  margin-right: 90px;
+  }
+.podcast-card img {
+  width: 383px;
+  height: 367px;
+  border-radius: 30px;
+}
+
+.podcast-card {
+ width: 388px;;
+  }
+    }
+</style>
