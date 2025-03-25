@@ -6,7 +6,7 @@ const {header, image, text, buyTicketUrl, date, start_time, end_time, pris} = As
 
 <div class="card-container">
 <article class="liveshow">
-  <img src={image} alt={header} /> 
+  <img src=`billeder/${image}` alt={header} /> 
   <p>{date}</p>
   <p>{start_time.split(':').slice(0, 2).join(':')} til {end_time.split(':').slice(0, 2).join(':')}</p>
   <h3>{header}</h3>
